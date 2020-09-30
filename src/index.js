@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'components/app/app';
 
-const MovieCharacteristics = {
+const MainMovieCharacteristics = {
   name: 'The Grand Budapest Hotel',
   genre: 'Drama',
   releaseDate: '2004',
@@ -10,9 +10,9 @@ const MovieCharacteristics = {
 
 ReactDOM.render(
   <App
-    name={MovieCharacteristics.name}
-    genre={MovieCharacteristics.genre}
-    releaseDate={MovieCharacteristics.releaseDate}
+    mainMovieName={MainMovieCharacteristics.name}
+    mainMovieGenre={MainMovieCharacteristics.genre}
+    mainMovieReleaseDate={MainMovieCharacteristics.releaseDate}
   />,
   document.getElementById('root'),
 );

@@ -2,9 +2,9 @@ import React from 'react';
 
 const MainScreen = (props) => {
   const {
-    name,
-    genre,
-    releaseDate
+    mainMovieName,
+    mainMovieGenre,
+    mainMovieReleaseDate,
   } = props;
 
   return (
@@ -40,10 +40,10 @@ const MainScreen = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{name}</h2>
+              <h2 className="movie-card__title">{mainMovieName}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{genre}</span>
-                <span className="movie-card__year">{releaseDate}</span>
+                <span className="movie-card__genre">{mainMovieGenre}</span>
+                <span className="movie-card__year">{mainMovieReleaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">

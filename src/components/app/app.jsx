@@ -3,16 +3,16 @@ import MainScreen from '../main-screen/main-screen';
 
 const App = (props) => {
   const {
-    name,
-    genre,
-    releaseDate
+    mainMovieName,
+    mainMovieGenre,
+    mainMovieReleaseDate,
   } = props;
 
   return (
     <MainScreen
-      name={name}
-      genre={genre}
-      releaseDate={releaseDate}
+      mainMovieName={mainMovieName}
+      mainMovieGenre={mainMovieGenre}
+      mainMovieReleaseDate={mainMovieReleaseDate}
     />
   );
 };
