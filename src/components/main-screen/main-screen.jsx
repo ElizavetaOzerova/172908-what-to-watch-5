@@ -1,11 +1,8 @@
 import React from 'react';
 
 const MainScreen = (props) => {
-  const {
-    mainMovieName,
-    mainMovieGenre,
-    mainMovieReleaseDate,
-  } = props;
+  // eslint-disable-next-line react/prop-types
+  const {mainMovieName, mainMovieGenre, mainMovieReleaseDate} = props;
 
   return (
     <div>
@@ -36,7 +33,7 @@ const MainScreen = (props) => {
           <div className="movie-card__info">
             <div className="movie-card__poster">
               <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
-                   height="327" />
+                height="327" />
             </div>
 
             <div className="movie-card__desc">
@@ -49,13 +46,13 @@ const MainScreen = (props) => {
               <div className="movie-card__buttons">
                 <button className="btn btn--play movie-card__button" type="button">
                   <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlink:href="#play-s"></use>
+                    <use xlinkHref="#play-s"></use>
                   </svg>
                   <span>Play</span>
                 </button>
                 <button className="btn btn--list movie-card__button" type="button">
                   <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlink:href="#add"></use>
+                    <use xlinkHref="#add"></use>
                   </svg>
                   <span>My list</span>
                 </button>
@@ -106,7 +103,7 @@ const MainScreen = (props) => {
             <article className="small-movie-card catalog__movies-card">
               <div className="small-movie-card__image">
                 <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                     alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
+                  alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
               </div>
               <h3 className="small-movie-card__title">
                 <a className="small-movie-card__link" href="movie-page.html">Fantastic Beasts: The Crimes of
@@ -145,7 +142,7 @@ const MainScreen = (props) => {
             <article className="small-movie-card catalog__movies-card">
               <div className="small-movie-card__image">
                 <img src="img/we-need-to-talk-about-kevin.jpg" alt="We need to talk about Kevin" width="280"
-                     height="175" />
+                  height="175" />
               </div>
               <h3 className="small-movie-card__title">
                 <a className="small-movie-card__link" href="movie-page.html">We need to talk about Kevin</a>
@@ -297,6 +294,7 @@ const MainScreen = (props) => {
           </div>
         </section>
       </div>
+    </div>
   );
 };
 

@@ -2,11 +2,8 @@ import React from 'react';
 import MainScreen from '../main-screen/main-screen';
 
 const App = (props) => {
-  const {
-    mainMovieName,
-    mainMovieGenre,
-    mainMovieReleaseDate,
-  } = props;
+  // eslint-disable-next-line react/prop-types
+  const {mainMovieName, mainMovieGenre, mainMovieReleaseDate} = props;
 
   return (
     <MainScreen
