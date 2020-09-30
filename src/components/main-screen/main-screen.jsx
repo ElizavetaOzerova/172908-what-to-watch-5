@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainScreen = (props) = {
+const MainScreen = (props) => {
   const {
     name,
     genre,
