@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import MainScreen from '../main-screen/main-screen';
 
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const {mainMovieName, mainMovieGenre, mainMovieReleaseDate} = props;
+  const {
+    mainMovieName,
+    mainMovieGenre,
+    mainMovieReleaseDate,
+  } = props;
 
   return (
     <MainScreen
@@ -12,6 +17,12 @@ const App = (props) => {
       mainMovieReleaseDate={mainMovieReleaseDate}
     />
   );
+};
+
+App.propTypes = {
+  mainMovieName: PropTypes.string.isRequired,
+  mainMovieGenre: PropTypes.string.isRequired,
+  mainMovieReleaseDate: PropTypes.string.isRequired,
 };
 
 export default App;
