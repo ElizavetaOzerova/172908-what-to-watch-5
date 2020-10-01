@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import MainScreen from '../main-screen/main-screen';
+import MainPage from '../main-page/main-page';
 
 const App = (props) => {
   const {mainMovie} = props;
 
   return (
-    <MainScreen mainMovie={mainMovie} />
+    <MainPage mainMovie={mainMovie} />
   );
 };
 

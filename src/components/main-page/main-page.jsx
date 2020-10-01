@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MainScreen = (props) => {
+const MainPage = (props) => {
   const {mainMovie} = props;
   const mainMovieName = mainMovie.name;
   const mainMovieGenre = mainMovie.genre;
@@ -301,7 +301,7 @@ const MainScreen = (props) => {
   );
 };
 
-MainScreen.propTypes = {
+MainPage.propTypes = {
   mainMovie: {
     mainMovieName: PropTypes.string.isRequired,
     mainMovieGenre: PropTypes.string.isRequired,
@@ -309,4 +309,4 @@ MainScreen.propTypes = {
   }
 };
 
-export default MainScreen;
+export default MainPage;
