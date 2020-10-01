@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MainScreen = (props) => {
-  const {
-    mainMovieName,
-    mainMovieGenre,
-    mainMovieReleaseDate,
-  } = props;
+  const {mainMovie} = props;
+  const mainMovieName = mainMovie.name;
+  const mainMovieGenre = mainMovie.genre;
+  const mainMovieReleaseDate = mainMovie.releaseDate;
 
   return (
     <div>
@@ -303,9 +302,11 @@ const MainScreen = (props) => {
 };
 
 MainScreen.propTypes = {
-  mainMovieName: PropTypes.string.isRequired,
-  mainMovieGenre: PropTypes.string.isRequired,
-  mainMovieReleaseDate: PropTypes.string.isRequired,
+  mainMovie: {
+    mainMovieName: PropTypes.string.isRequired,
+    mainMovieGenre: PropTypes.string.isRequired,
+    mainMovieReleaseDate: PropTypes.string.isRequired,
+  }
 };
 
 export default MainScreen;

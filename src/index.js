@@ -11,9 +11,7 @@ const MainMovieCharacteristics = {
 
 ReactDOM.render(
     <App
-      mainMovieName={MainMovieCharacteristics.name}
-      mainMovieGenre={MainMovieCharacteristics.genre}
-      mainMovieReleaseDate={MainMovieCharacteristics.releaseDate}
+      mainMovie={MainMovieCharacteristics}
     />,
     document.getElementById(`root`)
 );
