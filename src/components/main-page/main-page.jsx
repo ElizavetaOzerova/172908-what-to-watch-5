@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 const MainPage = (props) => {
   const {mainMovie} = props;
-  const mainMovieName = mainMovie.name;
-  const mainMovieGenre = mainMovie.genre;
-  const mainMovieReleaseDate = mainMovie.releaseDate;
 
   return (
     <Fragment>
@@ -40,10 +37,10 @@ const MainPage = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{mainMovieName}</h2>
+              <h2 className="movie-card__title">{mainMovie.name}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{mainMovieGenre}</span>
-                <span className="movie-card__year">{mainMovieReleaseDate}</span>
+                <span className="movie-card__genre">{mainMovie.genre}</span>
+                <span className="movie-card__year">{mainMovie.releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -315,11 +312,11 @@ const MainPage = (props) => {
 };
 
 MainPage.propTypes = {
-  mainMovie: {
-    mainMovieName: PropTypes.string.isRequired,
-    mainMovieGenre: PropTypes.string.isRequired,
-    mainMovieReleaseDate: PropTypes.string.isRequired,
-  }
+  mainMovie: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string.isRequired,
+  }),
 };
 
 export default MainPage;
