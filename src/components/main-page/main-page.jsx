@@ -1,15 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
-const MainScreen = (props) => {
-  const {
-    mainMovieName,
-    mainMovieGenre,
-    mainMovieReleaseDate,
-  } = props;
+const MainPage = (props) => {
+  const {mainMovie} = props;
 
   return (
-    <div>
+    <Fragment>
       <section className="movie-card">
         <div className="movie-card__bg">
           <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
@@ -41,10 +37,10 @@ const MainScreen = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{mainMovieName}</h2>
+              <h2 className="movie-card__title">{mainMovie.name}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{mainMovieGenre}</span>
-                <span className="movie-card__year">{mainMovieReleaseDate}</span>
+                <span className="movie-card__genre">{mainMovie.genre}</span>
+                <span className="movie-card__year">{mainMovie.releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -255,7 +251,6 @@ const MainScreen = (props) => {
               </h3>
             </article>
 
-
             <article className="small-movie-card catalog__movies-card">
               <div className="small-movie-card__image">
                 <img src="img/dardjeeling-limited.jpg" alt="Dardjeeling Limited" width="280" height="175" />
@@ -297,15 +292,31 @@ const MainScreen = (props) => {
             <button className="catalog__button" type="button">Show more</button>
           </div>
         </section>
+
+        <footer className="page-footer">
+          <div className="logo">
+            <a className="logo__link logo__link--light">
+              <span className="logo__letter logo__letter--1">W</span>
+              <span className="logo__letter logo__letter--2">T</span>
+              <span className="logo__letter logo__letter--3">W</span>
+            </a>
+          </div>
+
+          <div className="copyright">
+            <p>© 2019 What to watch Ltd.</p>
+          </div>
+        </footer>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
-MainScreen.propTypes = {
-  mainMovieName: PropTypes.string.isRequired,
-  mainMovieGenre: PropTypes.string.isRequired,
-  mainMovieReleaseDate: PropTypes.string.isRequired,
+MainPage.propTypes = {
+  mainMovie: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string.isRequired,
+  }),
 };
 
-export default MainScreen;
+export default MainPage;
