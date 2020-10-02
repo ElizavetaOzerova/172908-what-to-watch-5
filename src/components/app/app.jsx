@@ -39,7 +39,11 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  mainMovie: PropTypes.objectOf(PropTypes.string).isRequired,
+  mainMovie: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string.isRequired,
+  }),
 };
 
 export default App;
