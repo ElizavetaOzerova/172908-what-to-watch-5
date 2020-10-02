@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import AddReview from '../add-review/add-review';
-import Auth from '../auth/auth';
 import MainPage from '../main-page/main-page';
 import MoviePage from '../movie-page/movie-page';
 import Player from '../player/player';
+import SignIn from '../sign-in/sign-in';
 import UserCatalog from '../user-catalog/user-catalog';
 
 const App = (props) => {
@@ -19,7 +19,7 @@ const App = (props) => {
           <MainPage mainMovie={mainMovie} />
         </Route>
         <Route exact path='/login'>
-          <Auth />
+          <SignIn />
         </Route>
         <Route exact path='/mylist'>
           <UserCatalog />
@@ -39,7 +39,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  mainMovie: PropTypes.object.isRequired,
+  mainMovie: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default App;
