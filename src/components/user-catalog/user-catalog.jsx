@@ -1,14 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import {Movie} from '../../prop-types';
+
 import MoviesList from '../movies-list/movies-list';
 
 const UserCatalog = (props) => {
   const {movies, handleMovieCardClick} = props;
-
-  console.log('UserCatalog', handleMovieCardClick)
 
   return (
     <div className="user-page">
