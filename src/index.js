@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/app/app';
-import films from './mocks/films';
+import movies from './mocks/films';
 
 const MainMovieCharacteristics = {
   name: `The Grand Budapest Hotel`,
@@ -13,7 +13,7 @@ const MainMovieCharacteristics = {
 ReactDOM.render(
     <App
       mainMovie={MainMovieCharacteristics}
-      films={films}
+      movies={movies}
     />,
     document.getElementById(`root`)
 );
