@@ -8,11 +8,12 @@ class MoviesList extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {activeMovie: 0};
+    this.state = {activeMovieID: 0};
   }
 
   render() {
     const {movies, handleMovieCardClick} = this.props;
+    const {activeMovieID} = this.state;
 
     return (
       <div className="catalog__movies-list">
@@ -21,9 +22,13 @@ class MoviesList extends PureComponent {
             key={movie.id}
             movie={movie}
             handleMovieCardMouseOver={() => {
-              this.setState({activeMovie: movie.id});
+              this.setState({activeMovieID: movie.id});
+            }}
+            handleMovieCardMouseOut={() => {
+              this.setState({activeMovieID: -1});
             }}
             handleMovieCardClick={handleMovieCardClick}
+            isActive={ movie.id === activeMovieID }
           />
         )}
       </div>
