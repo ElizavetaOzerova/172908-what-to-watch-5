@@ -4,21 +4,12 @@ import PropTypes from 'prop-types';
 import {Movie} from '../../prop-types';
 
 import MoviesList from '../movies-list/movies-list';
+import Tabs from '../tabs/tabs';
+import reviews from "../../mocks/reviews";
 
 const MoviePage = (props) => {
   const {
-    movie: {
-      name,
-      genre,
-      releaseDate,
-      ratingScore,
-      ratingLevel,
-      ratingCount,
-      description,
-      director,
-      starring,
-      poster,
-    },
+    movie,
     movies,
     handlePlayBtnClick,
     handleMyListBtnClick,
@@ -53,10 +44,10 @@ const MoviePage = (props) => {
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{name}</h2>
+              <h2 className="movie-card__title">{movie.name}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{genre}</span>
-                <span className="movie-card__year">{releaseDate}</span>
+                <span className="movie-card__genre">{movie.genre}</span>
+                <span className="movie-card__year">{movie.releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -90,46 +81,14 @@ const MoviePage = (props) => {
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
               <img
-                src={poster}
-                alt={`${name} poster`}
+                src={movie.poster}
+                alt={`${movie.name} poster`}
                 width="218"
                 height="327"
               />
             </div>
 
-            <div className="movie-card__desc">
-              <nav className="movie-nav movie-card__nav">
-                <ul className="movie-nav__list">
-                  <li className="movie-nav__item movie-nav__item--active">
-                    <Link to="/films/:id" className="movie-nav__link">Overview</Link>
-                  </li>
-                  <li className="movie-nav__item">
-                    <Link to="/films/:id" className="movie-nav__link">Details</Link>
-                  </li>
-                  <li className="movie-nav__item">
-                    <Link to="/films/:id" className="movie-nav__link">Reviews</Link>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="movie-rating">
-                <div className="movie-rating__score">{ratingScore}</div>
-                <p className="movie-rating__meta">
-                  <span className="movie-rating__level">{ratingLevel}</span>
-                  <span className="movie-rating__count">{ratingCount} ratings</span>
-                </p>
-              </div>
-
-              <div className="movie-card__text">
-                <p>{description}</p>
-
-                <p className="movie-card__director"><strong>Director: {director}</strong></p>
-
-                <p className="movie-card__starring">
-                  <strong>Starring: {starring} and other</strong>
-                </p>
-              </div>
-            </div>
+            <Tabs movie={movie} reviews={reviews} />
           </div>
         </div>
       </section>

@@ -14,3 +14,10 @@ export const Movie = PropTypes.shape({
   src: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
 }).isRequired;
+
+export const Review = PropTypes.shape({
+  text: PropTypes.string.isRequired,
+  movieRating: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+}).isRequired;

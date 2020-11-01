@@ -8,10 +8,10 @@ import MoviePage from '../movie-page/movie-page';
 import Player from '../player/player';
 import SignIn from '../sign-in/sign-in';
 import UserCatalog from '../user-catalog/user-catalog';
-import {Movie} from '../../prop-types';
+import {Movie, Review} from '../../prop-types';
 
 const App = (props) => {
-  const {mainMovie, movies} = props;
+  const {mainMovie, movies, reviews} = props;
 
   return (
     <BrowserRouter>
@@ -49,6 +49,7 @@ const App = (props) => {
             <MoviePage
               movies={movies}
               movie={movies[0]}
+              reviews={reviews}
               handleMovieCardClick={() => history.push(`/films/:id`)}
               handleMyListBtnClick={() => history.push(`/mylist`)}
               handlePlayBtnClick={() => history.push(`/player/:id`)}
@@ -76,6 +77,7 @@ App.propTypes = {
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
   movies: PropTypes.arrayOf(Movie).isRequired,
+  reviews: PropTypes.arrayOf(Review).isRequired,
 };
 
 export default App;
