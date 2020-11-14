@@ -1,13 +1,15 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Movie} from '../../prop-types';
 
 import MoviesList from '../movies-list/movies-list';
 import Tabs from '../tabs/tabs';
-import reviews from "../../mocks/reviews";
+import reviews from '../../mocks/reviews';
 
 const MoviePage = (props) => {
+  const MORE_LIKE_THIS_MOVIES_AMOUNT = 4;
+
   const {
     movie,
     movies,
@@ -16,12 +18,16 @@ const MoviePage = (props) => {
     handleMovieCardClick,
   } = props;
 
+  const moreLikeThisMovies = movies
+    .filter((item) => item.genre === movie.genre)
+    .slice(0, MORE_LIKE_THIS_MOVIES_AMOUNT);
+
   return (
-    <Fragment>
+    <>
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src="/img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+            <img src="/img/bg-the-grand-budapest-hotel.jpg" alt={movie.name} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -97,7 +103,7 @@ const MoviePage = (props) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <MoviesList movies={movies} handleMovieCardClick={handleMovieCardClick} />
+          <MoviesList movies={moreLikeThisMovies} handleMovieCardClick={handleMovieCardClick} />
 
         </section>
 
@@ -115,7 +121,7 @@ const MoviePage = (props) => {
           </div>
         </footer>
       </div>
-    </Fragment>
+    </>
   );
 };
 

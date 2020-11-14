@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-
+import PropTypes from 'prop-types';
 import {Movie, Review} from '../../prop-types';
+
 import {getAllTabs, Tab} from '../../enum/tab';
 import MoviePageReviewsTab from '../movie-page-reviews-tab/movie-page-reviews-tab';
 import MoviePageDetailsTab from '../movie-page-details-tab/movie-page-details-tab';
 import MoviePageOverviewTab from '../movie-page-overview-tab/movie-page-overview-tab';
-import PropTypes from 'prop-types';
 
 const getTabContent = (tab, movie, reviews) => {
   switch (tab) {
@@ -22,7 +22,7 @@ const getTabContent = (tab, movie, reviews) => {
 
 const Tabs = (props) => {
   const {movie, reviews} = props;
-  const [activeTab, setActiveTab] = useState(``);
+  const [activeTab, setActiveTab] = useState(Tab.OVERVIEW);
   const tabs = getAllTabs();
 
   const handleTabClick = (e) => {
